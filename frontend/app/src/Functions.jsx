@@ -1,12 +1,9 @@
-export const fetchApi = async (method, uri, body) => {
-    const host = "http://localhost:8000/api";
+export const fetchApi = async (method, uri, headers, body) => {
+    const host = "http://localhost:8000";
 
     return fetch(host + uri, {
             method: method,
-            headers: {
-                "Authorization": "Bearer " + localStorage.getItem('token'),
-                "Content-Type": "application/json"
-            },
+            ...(headers ? {headers: headers} : {}),
             ...(body ? {body: body} : {})
         })
         .then(response => response.json())
