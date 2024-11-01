@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NovelMetrix</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/index.css' %}" />
+  </head>
+  
+  <body>
+    {% csrf_token %}
+    <div id="main">
+      <div id="app"></div>
+    </div>
+    <script type="module" src="{% static 'assets/index.js' %}"></script>
+  </body>
+</html>
